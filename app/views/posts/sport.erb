@@ -3,6 +3,21 @@
  <form action="/posts/trending/<%= @sport %>" method="get">
   <button class="btn" name="trending" value="upvote">Trending!</button>
  </form>
+<div class="container">
+  <div class="row">
+    <h2>Expandable when is Focus</h2>
+    <h3>Mac Search Style</h3>
+        <div class="span12">
+            <form id="custom-search-form"  class="form-search form-horizontal pull-right" action="/posts/search/<%= @sport %>" method="get">
+                <div class="input-append span12">
+                    <input name="terms" type="text" class="search-query mac-style" placeholder="Search">
+                    <button type="submit" class="btn"><i class="icon-search"></i></button>
+                </div>
+            </form>
+        </div>
+  </div>
+</div>
+
 </div>
 
 <div id="wrapper">

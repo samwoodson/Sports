@@ -27,6 +27,12 @@ get '/posts/:sport' do
   erb :'posts/sport'
 end
 
+get '/posts/search/:sport' do
+  @sport = params[:sport]
+  term = params[:terms]
+  @posts = Post.where("content LIKE ? OR title LIKE ?", '%'+term+'%', '%'+term+'%')
+  erb:'posts/sport'
+end
 
 get '/posts/trending/:sport' do
     @sport = params[:sport]
@@ -78,6 +84,8 @@ post '/posts/upvote/:id' do
   # redirect "/posts/#{post.sport}"
   {vote_count: post.votes.count}.to_json
 end
+
+
 
 post '/posts/downvote/:id' do
   content_type :json
