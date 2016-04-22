@@ -1,6 +1,6 @@
 <div class="jumbotron">
   <h1 class="text-center"><%= @sport %></h1>
- <form action="" method="get">
+ <form action="/posts/trending/<%= @sport %>" method="get">
   <button class="btn" name="trending" value="upvote">Trending!</button>
  </form>
 </div>

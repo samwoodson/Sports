@@ -22,10 +22,23 @@ get '/posts' do
 end
 
 get '/posts/:sport' do
-  @posts = Post.where(sport: params[:sport]).to_a
-  @posts.sort_by!{ |post| -post.votes.count }
+  @posts = Post.where(sport: params[:sport]).order("random()").to_a
   @sport = params[:sport]
   erb :'posts/sport'
+end
+
+
+get '/posts/trending/:sport' do
+    @sport = params[:sport]
+    posts = Post.where(sport: params[:sport]).to_a
+    posts.sort_by!{ |post| -post.votes.count }
+    @posts = []
+    posts.each do |post|
+      if post.votes.count >=1
+        @posts << post 
+      end
+    end
+    erb :'posts/sport'
 end
 
 get '/users/logout' do
