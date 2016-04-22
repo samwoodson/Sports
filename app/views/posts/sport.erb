@@ -1,6 +1,10 @@
 <div class="jumbotron">
   <h1 class="text-center"><%= @sport %></h1>
+ <form action="" method="get">
+  <button class="btn" name="trending" value="upvote">Trending!</button>
+ </form>
 </div>
+
 <div id="wrapper">
   <div id="columns">
     <% @posts.each do |post| %>
