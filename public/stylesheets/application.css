@@ -64,15 +64,6 @@
 
 .well.well-sm{
   max-width: 400px;
-=======
-/*.well {
- width: 420px;
->>>>>>> 62deddeed36d62544b5a09f1a29e89399587f4ef
-}
-
-.well.well-sm{
- width: 400px;
-}*/
 
 .grid-item { width: 25%; }
 .grid-item--width2 { width: 50%; }
