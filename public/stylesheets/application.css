@@ -165,11 +165,40 @@ body {
 
 /* Nav Bar */
 body .navbar-default {
-    background-color: #38d4d6;
+    background-color: #233d5c;
     border-color: #e7e7e7;
 }
 
-body {
-  background-color: #CC0066;
+body button {
+  background-color: #e2a139;
+  margin: 10px;
 }
+
+body button a {
+  color: black;
+}
+
+body .navbar-default .navbar-brand {
+    color: black;
+    font-size: 40px;
+    margin: 10px;
+    display: block;
+}
+
+body h2 {
+  color: #e2a139;
+  float: left;
+  display: block;
+  font-size: 25px;
+  margin: 10px;
+
+}
+
+body .navbar-default .navbar-brand{
+  color: #e2a139;
+  font-size: 60px;
+}
+
+
+
 
