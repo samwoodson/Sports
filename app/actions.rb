@@ -35,7 +35,7 @@ get '/users/logout' do
 end
 
 get '/users/home' do 
-  arr = Vote.where(user_id: @user.id).to_a
+  arr = Vote.where(user_id: @user.id)
   final_arr = []
   arr.each do |post|
     final_arr << post.post_id 
@@ -45,29 +45,30 @@ get '/users/home' do
   erb :'users/userhome'
 end
 
+# post '/erb' do
+#   if request.xhr?
+#     erb :test, {  layout => false }
+#   else
+#     redirect to('/erb')
+#   end
+# end
+
 
 post '/posts/upvote/:id' do
-  @upvote = Vote.new(
+  newvote = Vote.new(
     user_id: @user.id,
-    post_id: params[:id]
+    post_id: params[:id],
+    kind: 'upvote'
   )
-  @upvote.save
+  newvote.save
   post = Post.find_by(id: params[:id])
-  post.score += 1
-  post.save
-  redirect "posts/#{post.sport}"
+  redirect "/posts/#{post.sport}"
 end
 
-post '/posts/downvote/:id' do
-  @downvote = Vote.new(
-    user_id: @user.id,
-    post_id: params[:id]
-  )
-  @downvote.save
-  post = Post.find_by(id: params[:id])
-  post.score -= 1
-  post.save
-  redirect "posts/#{post.sport}"
+post '/posts/remove/:id' do
+  vote = Vote.find_by(user_id: @user.id, post_id: params[:id])
+  vote.destroy
+  redirect "/users/home"
 end
 
 post '/users/login' do

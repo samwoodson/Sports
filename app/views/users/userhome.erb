@@ -6,24 +6,25 @@
   <% end %>
 </div>
 
-<center>
-  <div class="container">
-    <div class="row">
-      <% @posts.each do |post| %>
-        <div class="col-sm-6">
-          <%= post.url %>
-        
-        <% if @user && post.votes.pluck(:user_id).exclude?(@user.id)%>
-          <form action="/posts/upvote/<%=post.id%>" method="post">
-            <button name="foo" value="upvote" class="btn btn-success">Upvote this post!</button>
+<div id="wrapper">
+  <div id="columns">
+  <% @posts.each do |post| %>
+    <div class= "pin">
+       <%if post.url%>
+        <div class="well well-sm">
+        <%= post.url %>
+          <% else %>
+          <div class="well">
+            <h5><small><%= post.title %></small> <%= post.content %></h5 >
+          <% end %>
+            <form class = "merge_button" action="/posts/remove/<%=post.id%>" method="post">
+         <center>
+            <button name="foo" value="upvote" id="upvote" class="glyphicon glyphicon-remove"></button>
+          </center>
           </form>
-          <form action="/posts/downvote/<%=post.id%>" method="post">
-            <button name="foo" value="downvote" class="btn btn-danger">Downvote this post!</button>
-          </form>
-        <% end %>
-        <h3>Votes:<%= post.score%> </h3>
-        </div>
-      <% end %>
-    </div>
+        <h5 class="text-center"><small>Votes:<%= post.votes.count %></small></h5>
+         </div>
   </div>
-</center>
+  <% end %> 
+  </div>
+  </div>
