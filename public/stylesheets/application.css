@@ -1,3 +1,6 @@
+body {
+  background-color: #CC0066;
+}
 
 #wrapper {
   width: 90%;
@@ -64,15 +67,7 @@
 
 .well.well-sm{
   max-width: 400px;
-=======
-/*.well {
- width: 420px;
->>>>>>> 62deddeed36d62544b5a09f1a29e89399587f4ef
 }
-
-.well.well-sm{
- width: 400px;
-}*/
 
 .grid-item { width: 25%; }
 .grid-item--width2 { width: 50%; }
@@ -118,7 +113,10 @@ transform:scale(0.85);
 
 * { box-sizing: border-box; } 
 
-body { font-family: sans-serif; }
+body { 
+  font-family: sans-serif;
+
+ }
 
 /* ---- grid ---- */
 
@@ -164,3 +162,14 @@ body { font-family: sans-serif; }
   -webkit-transition: -webkit-transform 0.2s;
           transition: transform 0.2s;
 }
+
+/* Nav Bar */
+body .navbar-default {
+    background-color: #38d4d6;
+    border-color: #e7e7e7;
+}
+
+body {
+  background-color: #CC0066;
+}
+
