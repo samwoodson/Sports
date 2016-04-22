@@ -3,25 +3,27 @@
 </div>
 <div id="wrapper">
   <div id="columns">
-  <% @posts.each do |post| %>
-    <div class= "pin">
-       <%if post.url%>
-        <div class="well well-sm">
-        <%= post.url %>
-          <% else %>
-        <div class="well">
-        <h5><small><%= post.title %></small> <%= post.content %></h5 >
-      <% end %>
-        <% if @user %>
-        <form class = "merge_button" action="/posts/upvote/<%=post.id%>" method="post">
-         <center>
-            <button name="foo" value="upvote" id="upvote" class="glyphicon glyphicon-thumbs-up"></button>
+    <% @posts.each do |post| %>
+      <div class= "pin">
+        <%if post.url%>
+          <div class="well well-sm">
+          <%= post.url %>
+        <% else %>
+          <div class="well">
+            <h5><small><%= post.title %></small> <%= post.content %></h5 >
+        <% end %>
+        <% if @user && post.votes.pluck(:user_id).exclude?(@user.id) %>
+          <center>
+            <button data-id="<%= post.id %>" type="button" name="foo" value="upvote" class="upvote_button glyphicon glyphicon-thumbs-up"></button>
           </center>
-          </form>
-          <% end %>
-        <h5 class="text-center"><small>Votes:<%= post.votes.count %></small></h5>
-         </div>
+        <% elsif @user %>
+            <center>
+            <button data-id="<%= post.id %>" type="button" name="foodown" value="downvote" class="downvote_button glyphicon glyphicon-remove"></button>
+            </center>
+        <% end %>
+        <h5 class="text-center"><small>Votes:<span id="number_votes_<%= post.id %>"><%= post.votes.count %><span></small></h5>
+      </div>
+      </div>
+    <% end %> 
   </div>
-  <% end %> 
-  </div>
-  </div>
+</div>

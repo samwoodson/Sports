@@ -53,8 +53,8 @@ end
 #   end
 # end
 
-
 post '/posts/upvote/:id' do
+  content_type :json
   newvote = Vote.new(
     user_id: @user.id,
     post_id: params[:id],
@@ -62,7 +62,18 @@ post '/posts/upvote/:id' do
   )
   newvote.save
   post = Post.find_by(id: params[:id])
-  redirect "/posts/#{post.sport}"
+  # redirect "/posts/#{post.sport}"
+  {vote_count: post.votes.count}.to_json
+end
+
+post '/posts/downvote/:id' do
+  content_type :json
+  post = Post.find_by(id: params[:id])
+  vote = Vote.find_by(user_id: @user.id, post_id: post.id)
+  vote.destroy
+  post.reload
+  # redirect "/posts/#{post.sport}"
+  {vote_count: post.votes.count}.to_json
 end
 
 post '/posts/remove/:id' do
