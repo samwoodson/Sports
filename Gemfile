@@ -12,6 +12,7 @@ gem 'puma'
 gem 'tux'
 gem 'twitter'
 gem 'redditkit'
+gem 'yt'
 
 group :development, :test do
   gem 'pry'

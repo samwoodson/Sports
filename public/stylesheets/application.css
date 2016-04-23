@@ -106,12 +106,12 @@
 }
 
 .well {
-  max-width: 500px;
+  max-width: 520px;
 
 }
 
 .well.well-sm{
-  max-width: 400px;
+  max-width: 500px;
 
 .grid-item { width: 25%; }
 .grid-item--width2 { width: 50%; }

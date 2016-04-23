@@ -1,4 +1,5 @@
 <div class="jumbotron">
+<br>
   <h1 class="text-center"><%= @sport.capitalize %></h1>
  <form class="merge_button" action="/posts/trending/<%= @sport %>" method="get">
   <button class="btn" name="trending" value="upvote">Trending</button>
@@ -44,5 +45,6 @@
       </div>
       </div>
     <% end %> 
+
   </div>
 </div>
