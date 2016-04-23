@@ -28,7 +28,6 @@ desc 'Populates the DB'
 task "db:populate" do
   #PopulateFromTwitter.get_tweets("nba", "basketball")
   #PopulateFromTwitter.get_tweets("WojVerticalNBA", "basketball")
-  #PopulateFromTwitter.get_tweets("nhl", "hockey)
   #PopulateFromTwitter.get_tweets("nhl", "hockey")
   #PopulateFromTwitter.get_tweets("tsnhockey", "hockey")
   #PopulateFromReddit.get_posts("hockey", "hockey")

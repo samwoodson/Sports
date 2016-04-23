@@ -8,7 +8,7 @@ class PopulateFromReddit
     test.results.each do |link| 
       comments = RedditKit.comments(link)
       comment = comments[0] 
-      unless comment.text.match(/locking this thread/) || comment.text.match(/fuck/)
+      unless comment.text.match(/[Ll][Oo][Cc][Kk][Ii][Nn][Gg] [Tt][Hh][Ii][Ss] thread/) || comment.text.match(/[Ff][Uu][Cc][Kk]/)
         title = link.title
         content = comment.text
         Post.create(title: title, content:content, sport:sport, author:comment.author)
