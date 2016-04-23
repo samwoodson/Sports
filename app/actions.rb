@@ -30,7 +30,7 @@ end
 get '/posts/search/:sport' do
   @sport = params[:sport]
   term = params[:terms]
-  @posts = Post.where("content LIKE ? OR title LIKE ?", '%'+term+'%', '%'+term+'%')
+  @posts = Post.where("content LIKE ? OR title LIKE ?", '%'+term+'%', '%'+term+'%').where(sport: @sport)
   erb:'posts/sport'
 end
 

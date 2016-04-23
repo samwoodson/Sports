@@ -1,7 +1,10 @@
+.merge_button{
+  display:inline-block;
+}
 #custom-search-form {
         margin:0;
         margin-top: 5px;
-        padding: 0;
+        padding: 0;        
     }
  
     #custom-search-form .search-query {
@@ -103,7 +106,7 @@
 }
 
 .well {
-  max-width: 400px;
+  max-width: 500px;
 
 }
 
