@@ -1,10 +1,37 @@
+
+
+h1{
+  font-family: times, Times New Roman, times-roman, georgia, serif;
+  color: #444;
+  margin: 0;
+  font-size: 80px;
+  line-height: 44px;
+  letter-spacing: -2px;
+  font-weight: bold;
+}
+
 .merge_button{
   display:inline-block;
 }
+
+.heading{
+  padding-top: 75px;
+}
+
+.sort_button{
+  font-family: times, Times New Roman, times-roman, georgia, serif;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: italic;
+  opacity: 0.8;
+
+}
+
 #custom-search-form {
         margin:0;
         margin-top: 5px;
-        padding: 0;        
+        padding: 0; 
+        font-style:italic;       
     }
  
     #custom-search-form .search-query {
@@ -46,7 +73,9 @@
         width: 260px;
     } 
 
-
+body{
+  background-color: #F5F8FA;
+}
 #wrapper {
   width: 90%;
   max-width: 1100px;
@@ -79,8 +108,6 @@
   padding-bottom: 5px;
   background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
   opacity: 1;
-  
-
 }
 
 .pin img {
@@ -124,14 +151,10 @@
     -moz-column-count: 1;
     column-count: 1;
   }
-
-  #columns:hover .pin:not(:hover) {
-  opacity: 1;
-  } 
 }
 
 .well{
-  max-width: 400px;
+  max-width: 500px;
   }
 
 .grid-item { width: 25%; }

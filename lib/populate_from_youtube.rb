@@ -6,10 +6,10 @@ class PopulateFromYoutube
   def self.get_youtube(id, sport)
     
     Yt.configure do |config|
-      config.api_key = YOUR_KEY
+      config.api_key = 
     end
     begin
-      date = Time.now - 5184000
+      date = Time.now - 2592000
       playlist = Yt::Playlist.new id: id
       items = playlist.playlist_items
       items.each do |item|

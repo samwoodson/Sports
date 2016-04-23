@@ -1,28 +1,26 @@
-<div class="jumbotron">
-<br>
-  <h1 class="text-center"><%= @sport.capitalize %></h1>
- <form class="merge_button" action="/posts/trending/<%= @sport %>" method="get">
+
+  <div class = "heading">
+    <h1 class="text-center"><em><%= @sport.capitalize %></em></h1>
+  
+ <form class="merge_button sort_button" action="/posts/trending/<%= @sport %>" method="get">
   <button class="btn" name="trending" value="upvote">Trending</button>
  </form>
 
- <form class="merge_button" action="/posts/<%= @sport %>" method="get">
+ <form class="merge_button sort_button" action="/posts/<%= @sport %>" method="get">
   <button class="btn" name="trending" value="upvote">All</button>
  </form>
-<div class="container">
-  <div class="row">
-        <div class="span12">
-            
-            <form id="custom-search-form" class="form-search form-horizontal pull-right merge_button" action="/posts/search/<%= @sport %>" method="get">
-                <div class="input-append span12">
-                    <input name="terms" type="text" class="search-query mac-style" placeholder="Search">
-                    <button type="submit" class="btn"><i class="icon-search"></i></button>
-                </div>
-            </form>
 
-        </div>
-  </div>
+
+<form id="custom-search-form" class="form-search form-horizontal pull-right merge_button" action="/posts/search/<%= @sport %>" method="get">
+    <div class="input-append span12">
+        <input name="terms" type="text" class="search-query" placeholder="Search">
+        <button type="submit" class="btn"><i class="icon-search"></i></button>
+    </div>
+</form>
 </div>
-</div>
+<hr/>
+ 
+
 <div id="wrapper">
   <div id="columns">
     <% @posts.each do |post| %>
