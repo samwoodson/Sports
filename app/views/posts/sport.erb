@@ -22,9 +22,7 @@
         </div>
   </div>
 </div>
-
 </div>
-
 <div id="wrapper">
   <div id="columns">
     <% @posts.each do |post| %>
@@ -33,10 +31,11 @@
           <div class="well well-sm">
           <%= post.url %>
         <% else %>
-          <div class="well">
+          <div class="well test">
             <h5><small><%= post.title %></small> <%= post.content %></h5 >
         <% end %>
         <% if @user && post.votes.pluck(:user_id).exclude?(@user.id) %>
+
             <button data-id="<%= post.id %>" type="button" name="foo" value="upvote" class="upvote_button glyphicon glyphicon-thumbs-up merge_button"></button>
         <% elsif @user %>
             <button data-id="<%= post.id %>" type="button" name="foodown" value="downvote" class="downvote_button glyphicon glyphicon-remove merge_button"></button>

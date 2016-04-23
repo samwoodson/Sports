@@ -109,13 +109,30 @@
   opacity: 0.2;
 }
 
-.well {
-  max-width: 520px;
-
+ 
+@media (max-width: 960px) {
+  #columns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
 }
 
-.well.well-sm{
-  max-width: 500px;
+@media (max-width: 800px) {
+  #columns {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+
+  #columns:hover .pin:not(:hover) {
+  opacity: 1;
+  } 
+}
+
+.well{
+  max-width: 400px;
+  }
 
 .grid-item { width: 25%; }
 .grid-item--width2 { width: 50%; }

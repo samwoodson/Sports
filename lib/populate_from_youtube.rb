@@ -6,7 +6,7 @@ class PopulateFromYoutube
   def self.get_youtube(id, sport)
     
     Yt.configure do |config|
-      config.api_key = 'AIzaSyBkfUsw0XxnLWdaAnmIpTadS09QPfdIeXo'
+      config.api_key = YOUR_KEY
     end
     begin
       date = Time.now - 5184000
