@@ -99,7 +99,7 @@ end
 
 post '/posts/remove/:id' do
   vote = Vote.find_by(user_id: @user.id, post_id: params[:id])
-  vote.destroy
+  vote.destroy if vote
   redirect "/users/home"
 end
 
