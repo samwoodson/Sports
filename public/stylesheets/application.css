@@ -169,12 +169,12 @@ body .navbar-default {
     border-color: #e7e7e7;
 }
 
-body button {
+/*body button {
   background-color: #e2a139;
   margin: 10px;
-}
+}*/
 
-body button a {
+.custom_button {
   color: black;
 }
 
@@ -185,18 +185,18 @@ body .navbar-default .navbar-brand {
     display: block;
 }
 
-body h2 {
+#tagline {
   color: #e2a139;
   float: left;
-  display: block;
   font-size: 25px;
   margin: 10px;
 
 }
 
-body .navbar-default .navbar-brand{
+#website_logo {
   color: #e2a139;
-  font-size: 60px;
+  font-size: 50px;
+  display: block;
 }
 
 

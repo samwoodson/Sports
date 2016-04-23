@@ -2,42 +2,46 @@
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
       </button>
         <div>
-          <a class="navbar-brand" href="/">Sports N00bs</a>
+          <div>
+          <a id="website_logo" class="navbar-brand" href="/">Sports N00bs</a>
+          </div>
+          <h2 id="tagline"> Where noobs become pros </h2>
         </div>
-        <h2> Where noobs become pros </h2>
+        
     </div>
-    <center>
+
+<div>
+  <% if @user %>
+      <div class="container navbar-text navbar-right navbar-collapse">
+        <a href="/users/home">Welcome
+        <%= @user.email %>!</a>
+        <button type="button" class="btn btn-active btn-lg"> <a href="/users/logout" role="button">Logout</a></button></div>
+  <% else %>
+      <form class="navbar-form navbar-right" action="/users/login" method="POST">
+        <div class="form-group">
+            <input type="text" class="form-control" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-active btn-sm">Sign In</button> 
+        <a class="btn btn-default custom_button" href="/users/new_user" >Sign Up</a>
+      </form>
+  <% end %>
+</div>
       <div class="container navbar-text navbar-right navbar-collapse">
       <ul class="nav navbar-nav">
-              <li><button type="button" class="btn btn-active btn-lg"><a href="/posts/hockey">Hockey</a></button>
-              </li>
-              <li><button type="button" class="btn btn-active btn-lg"><a href="/posts/basketball">Basketball</a></button>
-              </li>
-              </ul>
+        <li><a class="btn btn-default btn-lg" href="/posts/hockey">Hockey</a>
+        </li>
+        <li><a class="btn btn-default btn-lg" href="/posts/basketball">Basketball</a>
+        </li>
+      </ul>
       </div>
 
-      <% if @user %>
-            <div class="container navbar-text navbar-right navbar-collapse">
-              <a href="/users/home"><%= @user.email %></a>
-              <a href="/users/logout" class="btn btn-active btn-lg" role="button">Logout</a></div>
-          <% else %>
-            <form class="navbar-form navbar-right" action="/users/login" method="POST">
-              <div class="form-group">
-                  <input type="text" class="form-control" name="email" placeholder="Email">
-              </div>
-              <div class="form-group">
-                  <input type="password" class="form-control" name="password" placeholder="Password">
-              </div>
-              <button type="submit" class="btn btn-default">Sign In</button> 
-              <a href="/users/new_user" class="btn btn-primary" role="button">Sign Up</a>
-            </form>
-          <% end %>
+
       
-    </center>
+    
   </div>
 </div>
