@@ -1,47 +1,37 @@
-<div class="navbar navbar-default navbar-fixed-top">
+<div class="navbar navbar-default titlebar">
   <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-      </button>
-        <div>
-          <div>
-          <a id="website_logo" class="navbar-brand" href="/">Sports N00bs</a>
+    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-extra">
+    </button>
+    <a id="website_logo" href="/">Sports N00bs</a>
+    <% if @user %>
+        <div class="navbar-form navbar-right collapse navbar-collapse navbar-extra">
+          <a class="user" href="/users/home">Welcome
+          <%= @user.email %>!</a>
+          <a class="btn btn-default" href="/users/logout">Logout</a></div>
+    <% else %>
+        <form class="navbar-form navbar-right collapse navbar-collapse navbar-extra" action="/users/login" method="POST">
+          <div class="form-group">
+              <input type="text" class="form-control" name="email" placeholder="Email">
           </div>
-          <h2 id="tagline"> Where noobs become pros </h2>
-        </div>
-        
-    </div>
-
-<div>
-  <% if @user %>
-      <div class="container navbar-text navbar-right navbar-collapse">
-        <a href="/users/home">Welcome
-        <%= @user.email %>!</a>
-        <button type="button" class="btn btn-active btn-lg"> <a href="/users/logout" role="button">Logout</a></button></div>
-  <% else %>
-      <form class="navbar-form navbar-right" action="/users/login" method="POST">
-        <div class="form-group">
-            <input type="text" class="form-control" name="email" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password">
-        </div>
-        <button type="submit" class="btn btn-active btn-sm">Sign In</button> 
-        <a class="btn btn-default custom_button" href="/users/new_user" >Sign Up</a>
-      </form>
-  <% end %>
-</div>
-      <div class="container navbar-text navbar-right navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li><a class="btn btn-default btn-lg" href="/posts/hockey">Hockey</a>
-        </li>
-        <li><a class="btn btn-default btn-lg" href="/posts/basketball">Basketball</a>
-        </li>
-      </ul>
-      </div>
-
-
-      
-    
+          <div class="form-group">
+              <input type="password" class="form-control" name="password" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Sign In</button> 
+          <a class="btn custom_button" href="/users/new_user">Sign Up</a>
+        </form>
+    <% end %>
   </div>
 </div>
+  
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="collapse navbar-collapse navbar-extra">
+      <ul class="nav navbar-nav">
+        <li><a href="/posts/hockey">Hockey</a></li>
+        <li><a href="/posts/basketball">Basketball</a></li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+   
