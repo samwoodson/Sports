@@ -218,3 +218,18 @@ body .navbar-default .navbar-brand {
 	color: #e2a139;
 	margin-right: 1em;
 }
+
+/* Home Page*/
+
+.background {
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/background_photo.jpg");
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.homepage_text_box {
+	text-align: center;
+	color: #fff;
+}
