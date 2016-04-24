@@ -15,7 +15,9 @@ h1{
 }
 
 .heading{
-  padding-top: 75px;
+  padding-top: 95px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 .sort_button{
@@ -154,7 +156,7 @@ body{
 }
 
 .well{
-  max-width: 500px;
+  max-width: 400px;
   }
 
 .grid-item { width: 25%; }

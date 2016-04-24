@@ -36,9 +36,17 @@ task "db:populate" do
   #PopulateFromReddit.get_posts("hockey", "hockey")
   #PopulateFromReddit.get_posts("nba", "basketball")
   
-  #PopulateFromTwitter.get_tweets("DarrenDreger", "hockey")
+  PopulateFromTwitter.get_tweets("DarrenDreger", "hockey")
 
   PopulateFromYoutube.get_youtube('PLlVlyGVtvuVkO2UhE8VWy0YRaBNXMXJ5P','basketball')
 
   PopulateFromYoutube.get_youtube('PLdXLCD5yMvwj9zIRD5tHMjSW2hw56q8zp','hockey')
+end
+
+desc 'Deletes the DB'
+task "db:clear" do
+  posts = Post.all
+  posts.each do |post|
+    post.destroy
+  end
 end

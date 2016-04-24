@@ -1,10 +1,16 @@
-<div class="jumbotron">
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <% if @user.name %>
-    <h1 class="text-center"><%= @user.name %>'s Saved Posts</h1>
+    <h1 class="text-center"><em><%= @user.name %>'s Saved Posts</em></h1>
   <% else %>
-    <h1 class="text-center"><%= @user.email %>'s Saved Posts</h1>
+    <h1 class="text-center"><em><%= @user.email %>'s Saved Posts</em></h1>
   <% end %>
-</div>
+
 
 
 <div id="wrapper">
