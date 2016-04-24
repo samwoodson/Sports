@@ -30,19 +30,22 @@ task "db:populate" do
   #TWITTER
   #PopulateFromTwitter.get_tweets("nba", "basketball")
   #PopulateFromTwitter.get_tweets("WojVerticalNBA", "basketball")
+  
   #PopulateFromTwitter.get_tweets("nhl", "hockey")
   #PopulateFromTwitter.get_tweets("tsnhockey", "hockey")
+  #PopulateFromTwitter.get_tweets("DarrenDreger", "hockey")
   
   #REDDIT
   #PopulateFromReddit.get_posts("hockey", "hockey")
   #PopulateFromReddit.get_posts("nba", "basketball")
+
   
-  #PopulateFromTwitter.get_tweets("DarrenDreger", "hockey")
-
+ 
+  #YOUTUBE
   #PopulateFromYoutube.get_youtube('PLlVlyGVtvuVkO2UhE8VWy0YRaBNXMXJ5P','basketball')
-
   #PopulateFromYoutube.get_youtube('PLdXLCD5yMvwj9zIRD5tHMjSW2hw56q8zp','hockey')
 
+  #BOXSCORE
   #EspnScraper.get_score
 end
 

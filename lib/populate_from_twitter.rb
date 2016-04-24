@@ -22,9 +22,7 @@ class PopulateFromTwitter
           test=tweet.text
           test = test.gsub(/https:\/\/t.co\/\w{10}/, '')
           embed = client.oembed(tweet, :maxwidth => 375, :omit_script => true).html
-          embed = embed.gsub(/<script async.*<\/script>/, '')
           embed = embed.gsub(/\n/, '')
-          puts embed
           Post.create(content:test, sport:sport, author:tweet.user.name, url:embed)
         end
       end

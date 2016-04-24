@@ -4,9 +4,15 @@
   <marquee class="boxscore" behavior="scroll" direction="left">
       <% @scores.each do |score| %>
         <div class="box">
-          <h4><%=score.date%></h4>
-          <p> <%=score.away_team%> : <%=score.away_score%></p>
-          <p> <%=score.home_team%> : <%=score.home_score%></p>
+          <h4><em><%=score.date%></em></h4>
+          <% if score.away_score> score.home_score%>
+            <strong><p> <%=score.away_team%> : <%=score.away_score%></p></strong>
+            <p> <%=score.home_team%> : <%=score.home_score%></p>
+          <%else%>
+            <p> <%=score.away_team%> : <%=score.away_score%></p>
+            <strong><p> <%=score.home_team%> : <%=score.home_score%></p></strong>
+          <%end%>
+          
        </div>
       <%end%>
   </marquee>
