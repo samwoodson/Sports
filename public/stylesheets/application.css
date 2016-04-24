@@ -215,8 +215,9 @@ body{
   transition: all 0.3s ease-in-out;
 }
 
+
 #columns:hover .pin:not(:hover) {
-  opacity: 0.2;
+  opacity: 0.4;
 }
 
  
