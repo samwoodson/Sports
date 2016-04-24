@@ -3,11 +3,11 @@
     <h1 class="text-center"><em><%= @sport.capitalize %></em></h1>
     <br> 
  <form class="merge_button sort_button" action="/posts/trending/<%= @sport %>" method="get">
-  <button class="btn" name="trending" value="upvote">Trending</button>
+  <button class="btn colorbtn" name="trending" value="upvote">Trending</button>
  </form>
 
  <form class="merge_button sort_button" action="/posts/<%= @sport %>" method="get">
-  <button class="btn" name="trending" value="upvote">All</button>
+  <button class="btn colorbtn" name="trending" value="upvote">All</button>
  </form>
 
 
@@ -39,7 +39,7 @@
         <% elsif @user %>
             <button data-id="<%= post.id %>" type="button" name="foodown" value="downvote" class="downvote_button glyphicon glyphicon-remove merge_button"></button>
         <% end %>
-        <h5 class="text-center merge_button"><small>Votes:<span id="number_votes_<%= post.id %>"><%= post.votes.count %><span></small></h5>
+        <h5 class="text-center merge_button"><small>Upvotes:<span id="number_votes_<%= post.id %>"><%= post.votes.count %><span></small></h5>
       </div>
       </div>
     <% end %> 

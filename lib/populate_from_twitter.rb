@@ -8,10 +8,10 @@ class PopulateFromTwitter
   def self.get_tweets(twitter_user, sport)
     
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key        =  "yy8e7CAKbRlYptj73Khb4Np0e"
-      config.consumer_secret     = "xuej4OqAMKzc0ESsip9mt7GjYtGzseoYkmDomdYuYoyfLnyL8U"
-      config.access_token        = "722875700575768576-0uKpLcj7G779ijNJnBdknzGTF2Kdg1f"
-      config.access_token_secret = "zTjhFdH2GzUQKMjPDznmpd7iWCldF8t20ZGxPsS9iJdf1"
+      config.consumer_key        =  your_key
+      config.consumer_secret     = your_key
+      config.access_token        = your_key
+      config.access_token_secret = your_key
     end
 
     test = client.user_timeline(twitter_user, {count: 100, exclude_replies: true})

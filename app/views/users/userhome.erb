@@ -1,17 +1,6 @@
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <% if @user.name %>
-    <h1 class="text-center"><em><%= @user.name %>'s Saved Posts</em></h1>
-  <% else %>
-    <h1 class="text-center"><em><%= @user.email %>'s Saved Posts</em></h1>
-  <% end %>
-
-
+<div class="heading">
+  <h1 class="text-center"><em>Saved Posts</em></h1>
+</div>
 
 <div id="wrapper">
   <div id="columns">
@@ -29,7 +18,7 @@
             <button name="foo" value="upvote" id="upvote" class="glyphicon glyphicon-remove"></button>
           </center>
           </form>
-        <h5 class="text-center merge_button"><small>Votes:<%= post.votes.count %></small></h5>
+        <h5 class="text-center merge_button"><small>Upvotes:<%= post.votes.count %></small></h5>
          </div>
   </div>
   <% end %> 
