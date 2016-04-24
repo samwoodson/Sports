@@ -46,7 +46,7 @@ task "db:populate" do
   #PopulateFromYoutube.get_youtube('PLdXLCD5yMvwj9zIRD5tHMjSW2hw56q8zp','hockey')
 
   #BOXSCORE
-  #EspnScraper.get_score
+  EspnScraper.get_score
 end
 
 desc 'Deletes the DB'
