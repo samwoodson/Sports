@@ -1,27 +1,35 @@
 
   <div class = "heading">
+    
+  <marquee class="boxscore" behavior="scroll" direction="left">
+      <% @scores.each do |score| %>
+        <div class="box">
+          <h4><%=score.date%></h4>
+          <p> <%=score.away_team%> : <%=score.away_score%></p>
+          <p> <%=score.home_team%> : <%=score.home_score%></p>
+       </div>
+      <%end%>
+  </marquee>
     <h1 class="text-center"><em><%= @sport.capitalize %></em></h1>
     <br> 
- <form class="merge_button sort_button" action="/posts/trending/<%= @sport %>" method="get">
-  <button class="btn colorbtn" name="trending" value="upvote">Trending</button>
- </form>
+   <form class="merge_button sort_button" action="/posts/trending/<%= @sport %>" method="get">
+    <button class="btn colorbtn" name="trending" value="upvote">Trending</button>
+   </form>
 
- <form class="merge_button sort_button" action="/posts/<%= @sport %>" method="get">
-  <button class="btn colorbtn" name="trending" value="upvote">All</button>
- </form>
+   <form class="merge_button sort_button" action="/posts/<%= @sport %>" method="get">
+    <button class="btn colorbtn" name="trending" value="upvote">All</button>
+   </form>
 
 
-<form id="custom-search-form" class="form-search form-horizontal pull-right merge_button" action="/posts/search/<%= @sport %>" method="get">
-    <div class="input-append span12">
-        <input name="terms" type="text" class="search-query" placeholder="Search">
-        <button type="submit" class="btn"><i class="icon-search"></i></button>
-    </div>
-</form>
-<hr/>
+  <form id="custom-search-form" class="form-search form-horizontal pull-right merge_button" action="/posts/search/<%= @sport %>" method="get">
+      <div class="input-append span12">
+          <input name="terms" type="text" class="search-query" placeholder="Search">
+          <button type="submit" class="btn"><i class="icon-search"></i></button>
+      </div>
+  </form>
+  <br>
+  <br>
 </div>
-
- 
-
 <div id="wrapper">
   <div id="columns">
     <% @posts.each do |post| %>

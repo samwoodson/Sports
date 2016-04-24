@@ -4,6 +4,7 @@ require ::File.expand_path('../config/environment', __FILE__)
 require './lib/populate_from_twitter.rb'
 require './lib/populate_from_reddit.rb'
 require './lib/populate_from_youtube.rb'
+require './lib/espn_scraper.rb'
 
 Rake::Task["db:create"].clear
 Rake::Task["db:drop"].clear
@@ -36,11 +37,13 @@ task "db:populate" do
   #PopulateFromReddit.get_posts("hockey", "hockey")
   #PopulateFromReddit.get_posts("nba", "basketball")
   
-  PopulateFromTwitter.get_tweets("DarrenDreger", "hockey")
+  #PopulateFromTwitter.get_tweets("DarrenDreger", "hockey")
 
-  PopulateFromYoutube.get_youtube('PLlVlyGVtvuVkO2UhE8VWy0YRaBNXMXJ5P','basketball')
+  #PopulateFromYoutube.get_youtube('PLlVlyGVtvuVkO2UhE8VWy0YRaBNXMXJ5P','basketball')
 
-  PopulateFromYoutube.get_youtube('PLdXLCD5yMvwj9zIRD5tHMjSW2hw56q8zp','hockey')
+  #PopulateFromYoutube.get_youtube('PLdXLCD5yMvwj9zIRD5tHMjSW2hw56q8zp','hockey')
+
+  #EspnScraper.get_score
 end
 
 desc 'Deletes the DB'

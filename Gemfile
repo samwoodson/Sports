@@ -13,6 +13,7 @@ gem 'tux'
 gem 'twitter'
 gem 'redditkit'
 gem 'yt'
+gem 'espn_scraper', git: 'git://github.com/aj0strow/espn-scraper.git'
 
 group :development, :test do
   gem 'pry'

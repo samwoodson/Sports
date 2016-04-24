@@ -1,9 +1,75 @@
-/*FIXES PLACEMENT*/
+
+/* Scrolling Text */
+.boxscore{
+  margin-bottom:10px;
+}
+.box {
+  display: inline-block;
+  background: #FEFEFE;
+  border: 10px solid #FAFAFA;
+  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  margin-right: 20px;
+  margin-bottom:10px;
+  padding-left:20px;
+  padding-right: 20px;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-break-inside: avoid;
+  padding-bottom: 5px;
+  background: #f5f5f5;
+  opacity: 1;
+}
+
+.example1 {
+ height: 50px;  
+ overflow: hidden;
+ position: relative;
+}
+.example1 h3 {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);  
+ transform:translateX(100%);
+ /* Apply animation to this element */  
+ -moz-animation: example1 15s linear infinite;
+ -webkit-animation: example1 15s linear infinite;
+ animation: example1 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes example1 {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes example1 {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes example1 {
+ 0%   { 
+ -moz-transform: translateX(100%); /* Firefox bug fix */
+ -webkit-transform: translateX(100%); /* Firefox bug fix */
+ transform: translateX(100%);     
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ transform: translateX(-100%); 
+ }
+}
+
+
+/*POSITION FIXES*/
 .margin_change{
   padding-left: 50px;
 }
 .hkeybball{
-  padding-left:20px;
+  padding-left:22px;
 }
 .matching {
   padding-left: 50px;
@@ -14,17 +80,17 @@ h1{
   font-family: 'Cadal', sans-serif;
   color: #444;
   margin: 0;
-  font-size: 80px;
+  font-size: 70px;
   line-height: 44px;
   letter-spacing: -2px;
   font-weight: bold;
+  padding-top:10px;
 }
-
-
 
 .navigation_link{
   font-family: 'Cadal', sans-serif;
-  font-size:20px;
+  font-size:11px;
+  font-weight: bold;
 }
 
 
@@ -33,7 +99,6 @@ h1{
 }
 
 .heading{
-  padding-top: 40px;
   margin-right: 50px;
   margin-left: 50px;
 }
