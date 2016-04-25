@@ -37,6 +37,7 @@ task "db:populate" do
   
   #REDDIT
   #PopulateFromReddit.get_posts("hockey", "hockey")
+  #PopulateFromReddit.get_posts("nhl", "hockey")
   #PopulateFromReddit.get_posts("nba", "basketball")
 
   
@@ -46,13 +47,13 @@ task "db:populate" do
   #PopulateFromYoutube.get_youtube('PLdXLCD5yMvwj9zIRD5tHMjSW2hw56q8zp','hockey')
 
   #BOXSCORE
-  EspnScraper.get_score
+  #EspnScraper.get_score
 end
 
-desc 'Deletes the DB'
-task "db:clear" do
-  posts = Post.all
-  posts.each do |post|
-    post.destroy
-  end
-end
+# desc 'Deletes the DB'
+# task "db:clear" do
+#   posts = Post.all
+#   posts.each do |post|
+#     post.destroy
+#   end
+# end

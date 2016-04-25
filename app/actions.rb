@@ -23,7 +23,7 @@ end
 
 get '/posts/:sport' do
   @posts = Post.where(sport: params[:sport]).order("random()").to_a
-  @scores = Score.where(sport: params[:sport])
+  @scores = Score.where(sport: params[:sport]).order(date: :desc)
   @sport = params[:sport]
   erb :'posts/sport'
 end
@@ -32,13 +32,13 @@ get '/posts/search/:sport' do
   @sport = params[:sport]
   term = params[:terms]
   @posts = Post.where("content LIKE ? OR title LIKE ?", '%'+term+'%', '%'+term+'%').where(sport: @sport)
-  @scores = Score.where(sport: params[:sport])
+  @scores = Score.where(sport: params[:sport]).order(date: :desc)
   erb:'posts/sport'
 end
 
 get '/posts/trending/:sport' do
     @sport = params[:sport]
-    @scores = Score.where(sport: params[:sport])
+    @scores = Score.where(sport: params[:sport]).order(date: :desc)
     posts = Post.where(sport: params[:sport]).to_a
     posts.sort_by!{ |post| -post.votes.count }
     @posts = []

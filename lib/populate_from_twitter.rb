@@ -8,13 +8,13 @@ class PopulateFromTwitter
   def self.get_tweets(twitter_user, sport)
     
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key        =  your_key
-      config.consumer_secret     = your_key
-      config.access_token        = your_key
-      config.access_token_secret = your_key
+      config.consumer_key        = test
+      config.consumer_secret     = test
+      config.access_token        = test
+      config.access_token_secret = test
     end
 
-    test = client.user_timeline(twitter_user, {count: 100, exclude_replies: true})
+    test = client.user_timeline(twitter_user, {count: 150, exclude_replies: true})
     date = Time.now - 172800
     test.each do |tweet|
       unless tweet.retweet?
