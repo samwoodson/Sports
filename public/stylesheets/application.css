@@ -75,10 +75,11 @@
 
 /*HEADER*/
 h1{
-  font-family: 'Cadal', sans-serif;
+  font-family: 'Candal', sans-serif;
+  font-weight: bold;
   color: #444;
   margin: 0;
-  font-size: 85px;
+  font-size: 600%;
   line-height: 44px;
   letter-spacing: -2px;
   font-weight: bold;
@@ -86,7 +87,7 @@ h1{
 }
 
 .navigation_link{
-  font-family: 'Cadal', sans-serif;
+  font-family: 'Candal', sans-serif;
   font-size:11px;
   font-weight: bold;
 }
@@ -343,7 +344,7 @@ body { font-family: sans-serif; }
 .custom_button {
 	color: black;
 	background-color: #e2a139;
-  font-family: 'Cadal', sans-serif;
+  font-family: 'Candal', sans-serif;
 	border: 1px solid black;
 }
 
